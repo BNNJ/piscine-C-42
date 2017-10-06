@@ -1,5 +1,4 @@
 #include <unistd.h>
-#include <stdio.h>
 #define IS_DOOR x == max_width \
 && i >= max_width / 2 + 2 - ((y - 2) % 2 + (y - 2) / 2) - y + j \
 && i <= max_width / 2 + 0 + ((y - 2) % 2 + (y - 2) / 2) - y + j \
