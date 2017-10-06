@@ -8,7 +8,7 @@
 && j == ((y - 3) % 2 == 0 ? 2 : 3) + (y - 2) % 2 + (y - 2) / 2
 #define OFFSET (max_width / 2 - x / 2 + (y - j))
 
-void	print_floor(const int x, const int y, int const max_width)
+void	print_floor(const int x, const int y, const int max_width)
 {
 	int i;
 	int j;
