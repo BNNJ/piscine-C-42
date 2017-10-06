@@ -1,5 +1,13 @@
 #include <unistd.h>
 #include <stdio.h>
+#define IS_DOOR x == max_width \
+&& i >= max_width / 2 + 2 - ((y - 2) % 2 + (y - 2) / 2) - y + j \
+&& i <= max_width / 2 + 0 + ((y - 2) % 2 + (y - 2) / 2) - y + j \
+&& j > ((y - 3) % 2 == 0 ? 2 : 3)
+#define IS_KNOB y - 2 >= 5 && x == max_width \
+&& i == max_width / 2 - 1 + ((y - 2) % 2 + (y - 2) / 2) - y + j \
+&& j == ((y - 3) % 2 == 0 ? 2 : 3) + (y - 2) % 2 + (y - 2) / 2
+#define OFFSET (max_width / 2 - x / 2 + (y - j))
 
 void	print_floor(const int x, const int y, int const max_width)
 {
@@ -9,20 +17,15 @@ void	print_floor(const int x, const int y, int const max_width)
 	j = 0;
 	while (++j <= y)
 	{
-		i = -(max_width / 2 - x / 2 + (y - j));
+		i = -OFFSET;
 		while (++i <= 0)
 			write(1, " ", 1);
 		write(1, "/", 1);
 		while (++i <= x - 1 - 2 * (y - j))
 		{
-			if (y - 2 >= 5 && x == max_width
-				&& i == max_width / 2 - 1 + ((y - 2) % 2 + (y - 2) / 2) - y + j
-				&& j == ((y - 3) % 2 == 0 ? 2 : 3) + (y - 2) % 2 + (y - 2) / 2)
+			if (IS_KNOB)
 				write(1, "$", 1);
-			else if (x == max_width 
-				&& i >= max_width / 2 + 2 - ((y - 2) % 2 + (y - 2) / 2) - y + j
-				&& i <= max_width / 2 + 0 + ((y - 2) % 2 + (y - 2) / 2) - y + j
-				&& j > ((y - 3) % 2 == 0 ? 2 : 3))
+			else if (IS_DOOR)
 				write(1, "|", 1);
 			else
 				write(1, "*", 1);
