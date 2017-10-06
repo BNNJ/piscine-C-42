@@ -2,7 +2,7 @@ void	ft_putchar(const char c);
 
 char	*ft_init(const int n)
 {
-	if		(n == 0)
+	if	(n == 0)
 		return "-|oooo";
 	else if	(n == 1)
 		return "**/\\\\/";
