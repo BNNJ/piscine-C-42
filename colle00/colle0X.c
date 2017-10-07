@@ -1,5 +1,6 @@
 void	ft_putchar(const char c);
 
+// different symbols init function in case the norminette doesn't like the other one.
 /*char	*ft_init(const int n)
 {
 	if		(n == 0)
