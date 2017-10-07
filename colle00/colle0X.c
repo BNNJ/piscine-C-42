@@ -22,12 +22,7 @@ void	ft_print_line(const char *symb, const int x, const int y, const int j)
 	while (i <= x)
 	{
 		if (j != 1 && j != y) 
-		{
-			if (i == 1 || i == x)
-				ft_putchar(symb[1]);
-			else 
-				ft_putchar(' ');
-		}
+			ft_putchar((i == 1 || i == x) ? symb[1] : ' ');
 		else
 		{
 			if ((i == 1 || i == x) && j == 1)
