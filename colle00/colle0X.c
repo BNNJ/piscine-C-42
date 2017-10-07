@@ -1,17 +1,24 @@
 void	ft_putchar(const char c);
 
-char	*ft_init(const int n)
+/*char	*ft_init(const int n)
 {
-	if	(n == 0)
+	if		(n == 0)
 		return "-|oooo";
 	else if	(n == 1)
-		return "**/\\\\/";
+		return "**//*\\\\/";
 	else if	(n == 2)
 		return "BBAACC";
 	else if	(n == 3)
 		return "BBACAC";
 	else if	(n == 4)
 		return "BBACCA";
+} */
+
+char	*ft_init(const int n)
+{
+	char *symbols[] = {"-|oooo", "**/\\\\/", "BBAACC", "BBACAC", "BBACCA"};
+
+	return symbols[n];
 }
 
 void	ft_print_line(const char *symb, const int x, const int y, const int j)
@@ -21,7 +28,7 @@ void	ft_print_line(const char *symb, const int x, const int y, const int j)
 	i = 1;
 	while (i <= x)
 	{
-		if (j != 1 && j != y) 
+		if (j != 1 && j != y)
 			ft_putchar((i == 1 || i == x) ? symb[1] : ' ');
 		else
 		{
@@ -33,13 +40,12 @@ void	ft_print_line(const char *symb, const int x, const int y, const int j)
 				ft_putchar(symb[0]);
 		}
 		i++;
-	}		
+	}
 }
 
 void	ft_core(int n, const int x, const int y)
 {
 	char *symb;
-	int i;
 	int j;
 
 	j = 1;
