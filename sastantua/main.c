@@ -1,3 +1,4 @@
+#include <unistd.h>
 void	sastantua(int size);
 
 int		ft_atoi(char *str)
@@ -19,6 +20,10 @@ int		ft_atoi(char *str)
 
 int		main(int argc, char **argv)
 {
-	(argc == 2) ? sastantua(ft_atoi(argv[1])) : sastantua(5);
+	if (argc == 2)
+		(ft_atoi(argv[1]) > 0) ? sastantua(ft_atoi(argv[1])) : 
+		write(1, "invalid size, please enter a positive number", 44);
+	else 
+		sastantua(5);
 	return 0;
 }
