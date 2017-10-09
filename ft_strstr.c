@@ -33,7 +33,7 @@ char	*ft_strstr(char *str, char *to_find)
 int		main(int argc, char **argv)
 {
 	char *str = (argc >= 2) ? argv[1] : "Hello Darkness My Old Friend";
-	char *to_find = (argc >= 3) ? argv[2] : "";
+	char *to_find = (argc >= 3) ? argv[2] : "My";
 
 	printf("%s\n", ft_strstr(str, to_find));
 	return 0;
