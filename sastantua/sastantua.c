@@ -37,7 +37,7 @@ void	print_floor(const int x, const int y, const int max_width)
 	}
 }
 
-int		width(int x)
+int	width(int x)
 {
 	if (x == 0)
 		return 7;
