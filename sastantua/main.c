@@ -7,8 +7,7 @@ int		ft_atoi(char *str)
 	unsigned long long result;
 
 	result = 0;
-	while (*str == '\v' || *str == '\t' || *str == '\r' 
-		|| *str == '\n' || *str == '\f' || *str == ' ')
+	while ((*str >= 9 && *str <= 13) || *str == ' ')
 		str++;
 	sign = (*str == '-') ? -1 : 1;
 	if (*str == '-' || *str == '+')
