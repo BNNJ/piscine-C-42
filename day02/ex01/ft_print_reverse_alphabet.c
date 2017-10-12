@@ -1,5 +1,5 @@
 #include <unistd.h>
-
+/*  lol²
 void ft_putchar(char c)
 {
     write(1, &c, 1);
@@ -14,6 +14,12 @@ void ft_print_reverse_alphabet(void)
         ft_putchar(i);
         i--;
     }
+}
+*/
+
+void ft_print_reverse_alphabet(void)
+{
+	write(1, "zyxwvutsrqponmlkjihgfedcba", 26);
 }
 
 int main()
