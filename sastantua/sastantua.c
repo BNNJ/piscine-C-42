@@ -26,7 +26,7 @@ void	print_floor(const int x, const int y, const int max_width)
 		write(1, "/", 1);
 		while (++i <= x - 1 - 2 * (y - j))
 		{
-			if		(IS_KNOB)
+			if	(IS_KNOB)
 				write(1, "$", 1);
 			else if (IS_DOOR)
 				write(1, "|", 1);
