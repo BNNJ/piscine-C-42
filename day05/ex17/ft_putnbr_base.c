@@ -1,11 +1,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-void	ft_putchar(const char c)
-{
-	write(1, &c, 1);
-}
-
 int		is_valid(char *base)
 {
 	int i;
@@ -39,7 +34,7 @@ void	ft_compute(int nbr, int base_len, char *base)
 	}
 	if (n / base_len > 0)
 		ft_compute(n / base_len, base_len, base);
-	ft_putchar(base[n % base_len]);
+	write(1, base + n % base_len, 1);
 }
 
 void	ft_putnbr_base(int nbr, char *base)
