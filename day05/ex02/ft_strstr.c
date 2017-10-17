@@ -1,4 +1,3 @@
-#include <stdio.h>
 /*
 int		ft_check(char *str, char *to_find)
 {
