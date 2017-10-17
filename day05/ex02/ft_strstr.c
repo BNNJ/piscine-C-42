@@ -1,5 +1,5 @@
 /*
-int		ft_check(char *str, char *to_find)
+int	ft_check(char *str, char *to_find)
 {
 	if (!*to_find)
 		return 1;
