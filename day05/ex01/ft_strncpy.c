@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-
 char	*ft_strncpy(char *dest, const char *src, const unsigned int n)
 {
 	unsigned int i;
@@ -16,14 +13,4 @@ char	*ft_strncpy(char *dest, const char *src, const unsigned int n)
 		++i;
 	}
 	return dest;
-}
-
-int		main(int argc, char **argv)
-{
-	char dest[255];
-
-	if (argc > 2)
-		ft_strncpy(dest, argv[1], atoi(argv[2]));
-	printf("%s\n", dest);
-	return 0;
 }
