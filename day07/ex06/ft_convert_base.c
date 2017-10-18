@@ -9,12 +9,12 @@ char	*ft_to_base(int n, char *base)
 	int base_len;
 	int temp;
 
-	temp = n;
 	base_len = 0;
 	while (base[base_len])
 		++base_len;
-	num_len = 1;
-	while (temp >= base_len)
+	num_len = 0;
+	temp = n;
+	while (temp > 0)
 	{
 		++num_len;
 		temp /= base_len;
@@ -30,7 +30,7 @@ char	*ft_to_base(int n, char *base)
 	return result;
 }
 
-int		ft_search_base(char c, char *base)
+int	ft_search_base(char c, char *base)
 {
 	int i;
 
@@ -68,7 +68,7 @@ int	is_valid(char *str, char *base)
 	return 1;
 }
 
-int		ft_atoi_base(char *str, char *base)
+int	ft_atoi_base(char *str, char *base)
 {
 	short sign;
 	unsigned int result;
@@ -96,7 +96,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 		: "error : invalid base";
 }
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	char *n = (argc > 1) ? argv[1] : "424242";
 	char *base_from = (argc > 2) ? argv[2] : "0123456789abcdef";
