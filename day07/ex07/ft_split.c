@@ -55,10 +55,10 @@ char	**ft_split(char *str, char *charset)
 	return tab;
 }
 
-int		main()
+int		main(int argc, char **argv)
 {
-	char *str = "Hello0Darkness1My2Old3Friend";
-	char *charset = "0123";
+	char *str = (argc > 1) ? argv[1] : "Hello Darkness My Old Friend";
+	char *charset = (argc > 2) ? argv[2] : " \n\t\f\r\v";
 	char **tab = ft_split(str, charset);
 	int i = 0;
 
