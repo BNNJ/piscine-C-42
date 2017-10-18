@@ -1,5 +1,4 @@
 #include <unistd.h>
-#include <stdlib.h>
 
 void ft_putnbr(int nb)
 {
@@ -8,16 +7,10 @@ void ft_putnbr(int nb)
 	
 	if (nb < 0)
 	{
-		ft_putchar('-');
+		write(1, "-", 1);
 		nbr *= -1;
 	}
 	if (nbr / 10 > 0)
 		ft_putnbr(nbr / 10);
 	write(1, base + nbr % 10, 1);
-}
-
-int main(int argc, char **argv)
-{
-	ft_putnbr(atoi(argv[1]));
-	return 0;
 }
