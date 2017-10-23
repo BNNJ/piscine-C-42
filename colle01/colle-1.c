@@ -1,8 +1,6 @@
 #include "sudoku.h"
-#include <stdio.h>
 
 int		sudoku(char **grid, int row, int col);
-int		is_valid(const char c, char **grid, const int x, const int y);
 
 void	print_grid(char **grid)
 {
@@ -47,7 +45,6 @@ char	**set_grid(char **argv)
 	}
 	return grid;
 }
-
 
 int		main(int argc, char **argv)
 {
