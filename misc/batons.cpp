@@ -3,11 +3,17 @@ using namespace std;
 
 void 	play_game()
 {
-	int n, i, j;
+	int n, i, j, k;
 
 	cout << "Avec combien de batons veux-tu jouer ?" << endl;
 	cout << "Rappel : on peut retirer uniquement entre 1 et 3 batons" << endl;
-	cin >> n;
+	n = 6;
+	do
+	{
+		if (n < 6)
+			cout << "Pas assez de baton, tricheur !" << endl;
+		cin >> n;
+	} while (n < 6);
 	cout << "qui commence ? Ordinateur : 0, toi : 1" << endl;
 	cin >> i;
 
@@ -19,42 +25,39 @@ void 	play_game()
 				cout << "J'ai ete oblige de retirer le dernier baton, tu as gagne !" << endl;
 			else
 				cout << "Tu es obligé de retirer le dernier baton, j'ai gagné !" << endl;
-			return;
+            return;
 		}
 		if (i % 2 == 0)
 		{
-			if (n >= 5 )
-			{
+			if (n >= 5)
 				if ((n - 5) % 4 > 0)
-				{
-					cout << "J'ai retire " << (n - 5) % 4 << " batons" << endl;
-					n -= (n - 5) % 4;
-				}
+					k = (n - 5) % 4;
 				else
-				{
-					cout << "J'ai retire 1 baton" << endl;
-					--n;
-				}
-			}
+					k = 1;
 			else if (n >= 2)
-			{
-				cout << "J'ai retire " << n - 1 << " batons" << endl;
-				n = 1;
-			}
-			cout << "Il reste " << n << " batons" << endl;
+				k = 1;
+			cout << "J'ai retire " << k << " batons" << endl;
+			n -= k;
 		}
 		else
 		{
 			cout << "Combien de batons veux-tu retirer ?" << endl;
-			j = 0;
-			while (j < 1 || j > 3)
+			j = 2;
+            cout << "Entre un chiffre entre 1 et 3" << endl;
+			do
 			{
-				cout << "Entre un chiffre entre 1 et 3" << endl;
-				cin >> j;
-			}
+            	if (j < 1 || j > 3)
+            		cout << "Entre 1 et 3 on a dit (tocard)" << endl;
+            	cin >> j;
+			} while (j < 1 || j > 3);
 			n -= j;
-			cout << "Il reste " << n << " batons" << endl;
+			if (n < 1)
+			{
+				cout << "T'as volontairement pris le dernier baton, t'es con et t'as perdu" << endl;
+				return;
+			}
 		}
+		cout << "Il reste " << n << " batons" << endl;
 		++i;
 	}
 }
