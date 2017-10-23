@@ -19,7 +19,7 @@ void 	play_game()
 				cout << "J'ai ete oblige de retirer le dernier baton, tu as gagne !" << endl;
 			else
 				cout << "Tu es obligé de retirer le dernier baton, j'ai gagné !" << endl;
-            return;
+			return;
 		}
 		if (i % 2 == 0)
 		{
