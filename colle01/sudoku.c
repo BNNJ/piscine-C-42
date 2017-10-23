@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 int		is_valid(const char c, char **grid, const int y, const int x)
 {
 	int i;
@@ -24,11 +22,8 @@ int	sudoku(char **grid, int row, int col)
 	char c;
 
 	c = '1';
-	printf("%d, %d\n", row, col);
 	if (row == 9)
-	{
 		return 1;
-	}
 	if (grid[row][col] != '.')
 	{
 		if (col < 8)
@@ -51,7 +46,6 @@ int	sudoku(char **grid, int row, int col)
 				if (sudoku(grid, row + 1, 0))
 					return 1;
 			}
-			printf("backtrack\n");
 			grid[row][col] = '.';
 		}
 		++c;
