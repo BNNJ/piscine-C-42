@@ -25,7 +25,7 @@ void 	play_game()
 				cout << "J'ai ete oblige de retirer le dernier baton, tu as gagne !" << endl;
 			else
 				cout << "Tu es obligé de retirer le dernier baton, j'ai gagné !" << endl;
-            return;
+			return;
 		}
 		if (i % 2 == 0)
 		{
@@ -43,12 +43,12 @@ void 	play_game()
 		{
 			cout << "Combien de batons veux-tu retirer ?" << endl;
 			j = 2;
-            cout << "Entre un chiffre entre 1 et 3" << endl;
+			cout << "Entre un chiffre entre 1 et 3" << endl;
 			do
 			{
-            	if (j < 1 || j > 3)
-            		cout << "Entre 1 et 3 on a dit (tocard)" << endl;
-            	cin >> j;
+				if (j < 1 || j > 3)
+					cout << "Entre 1 et 3 on a dit (tocard)" << endl;
+				cin >> j;
 			} while (j < 1 || j > 3);
 			n -= j;
 			if (n < 1)
@@ -62,7 +62,7 @@ void 	play_game()
 	}
 }
 
-int		main()
+int	main()
 {
 	int k;
 
