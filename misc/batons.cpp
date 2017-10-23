@@ -29,13 +29,11 @@ void 	play_game()
 				{
 					cout << "J'ai retire " << (n - 5) % 4 << " batons" << endl;
 					n -= (n - 5) % 4;
-					cout << "Il reste " << n << " batons" << endl;
 				}
 				else
 				{
 					cout << "J'ai retire 1 baton" << endl;
 					--n;
-					cout << "Il reste " << n << " batons" << endl;
 				}
 			}
 			else if (n >= 2)
@@ -43,16 +41,17 @@ void 	play_game()
 				cout << "J'ai retire " << n - 1 << " batons" << endl;
 				n = 1;
 			}
+			cout << "Il reste " << n << " batons" << endl;
 		}
 		else
 		{
 			cout << "Combien de batons veux-tu retirer ?" << endl;
 			j = 0;
 			while (j < 1 || j > 3)
-            {
-                cout << "Entre un chiffre entre 1 et 3" << endl;
-                cin >> j;
-            }
+			{
+				cout << "Entre un chiffre entre 1 et 3" << endl;
+				cin >> j;
+			}
 			n -= j;
 			cout << "Il reste " << n << " batons" << endl;
 		}
