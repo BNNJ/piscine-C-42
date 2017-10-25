@@ -39,7 +39,7 @@ int		ft_count_solutions(int *board, int col, int count)
 	int row = 1;
 
 	if (col == N)
-		count++;
+		++count;
 	while (row <= N)
 	{
 		if (is_valid(board, col, row))
