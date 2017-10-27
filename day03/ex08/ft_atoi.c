@@ -12,7 +12,7 @@ int	ft_atoi(char *str)
 	sign = (*str == '-' || *str == '+') ? -(*str++ - 44) : 1;
 	while (*str && *str >= '0' && *str <= '9')
 		result = result * 10 + (*str++ - '0');
-	return sign * result;
+	return result * sign;
 }
 
 int main(int argc, char **argv)
