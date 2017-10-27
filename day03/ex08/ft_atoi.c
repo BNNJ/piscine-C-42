@@ -1,19 +1,15 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-
 int	ft_atoi(char *str)
 {
 	short sign;
 	unsigned long long result;
 
 	result = 0;
-	while (*str == '\v' || *str == '\t' || *str == '\r' 
-		|| *str == '\n' || *str == '\f' || *str == ' ')
+	while ((*str >= 9 && *str <= 13) || *str == ' ')
 		++str;
-	sign = (*str == '-') ? -1 : 1;
-	if (*str == '-' || *str == '+')
-		++str;
+	sign = (*str == '-' || *str == '+') ? -(*str++ - 44) : 1;
 	while (*str && *str >= '0' && *str <= '9')
 		result = result * 10 + (*str++ - '0');
 	return sign * result;
