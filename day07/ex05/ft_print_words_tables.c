@@ -4,6 +4,25 @@ char	**ft_split_whitespaces(char *str);
 
 void	ft_print_words_tables(char **tab)
 {
+	int i;
+	int j;
+
+	i = 0;
+	while (tab[i])
+	{
+		j = 0;
+		while (tab[i][j])
+		{
+			write(1, tab[i] + j, 1);
+			++j;
+		}
+		write(1, "\n", 1);
+		++i;
+	}
+}
+/*
+void	ft_print_words_tables(char **tab)
+{
 	while (*tab)
 	{
 		while (**tab)
@@ -12,7 +31,7 @@ void	ft_print_words_tables(char **tab)
 		++tab;
 	}
 }
-
+*/
 int		main()
 {
 	char *str = "Hello Darkness My Old Friend";
