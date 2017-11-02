@@ -1,5 +1,3 @@
 # piscine C de 42
 
-DO NOT BLINDLY COPY WHAT'S IN THERE !  
-I finished the piscine already, got accepted, and now i'm redoing it all over again to try to find solutions to the exercices i didn't do, and different (not necessarily better) solutions to the ones i did.  
-Everything works with my tests, but i might have missed exceptions or issues.  
+DO NOT USE THIS.  This is for private use only.
