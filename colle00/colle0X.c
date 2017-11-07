@@ -1,7 +1,7 @@
-void	ft_putchar(const char c);
+#include <unistd.h>
 
-// different symbols init function in case the norminette doesn't like the other one.
-/*char	*ft_init(const int n)
+/* ugly init that respects the norm
+char	*ft_init(const int n)
 {
 	if		(n == 0)
 		return "-|oooo";
@@ -17,7 +17,7 @@ void	ft_putchar(const char c);
 
 char	*ft_init(const int n)
 {
-	char *symbols[] = {"-|oooo", "**/\\\\/", "BBAACC", "BBACAC", "BBACCA"};
+	char *symbols[5] = {"-|oooo", "**/\\\\/", "BBAACC", "BBACAC", "BBACCA"};
 
 	return symbols[n];
 }
@@ -25,21 +25,23 @@ char	*ft_init(const int n)
 void	ft_print_line(const char *symb, const int x, const int y, const int j)
 {
 	int i;
+	char c;
 
 	i = 1;
 	while (i <= x)
 	{
 		if (j != 1 && j != y)
-			ft_putchar((i == 1 || i == x) ? symb[1] : ' ');
+			c = (i == 1 || i == x) ? symb[1] : ' ';
 		else
 		{
 			if ((i == 1 || i == x) && j == 1)
-				ft_putchar((i == 1) ? symb[2] : symb[3]);
+				c = (i == 1) ? symb[2] : symb[3];
 			else if ((i == 1 || i == x) && j == y)
-				ft_putchar((i == 1) ? symb[4] : symb[5]);
+				c = (i == 1) ? symb[4] : symb[5];
 			else
-				ft_putchar(symb[0]);
+				c = symb[0];
 		}
+		write(1, &c, 1);
 		i++;
 	}
 }
@@ -55,7 +57,7 @@ void	ft_core(int n, const int x, const int y)
 	{
 		ft_print_line(symb, x, y, j);
 		if (j != y)
-			ft_putchar('\n');
+			write(1, "\n", 1);
 		j++;
 	}
 }
