@@ -1,4 +1,4 @@
-int		is_valid(const char c, char **grid, const int y, const int x)
+int	is_valid(const char c, char **grid, const int y, const int x)
 {
 	int i;
 
