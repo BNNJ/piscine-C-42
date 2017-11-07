@@ -21,17 +21,13 @@ int	sudoku(char **grid, int row, int col)
 {
 	char c;
 
-	c = '1';
+	c = '0';
 	if (row == 9)
 		return 1;
 	if (grid[row][col] != '.')
-	{
-		if (col < 8)
-			return (sudoku(grid, row, col + 1));
-		else
-			return (sudoku(grid, row + 1, 0));
-	}
-	while (c <= '9')
+		return (col < 8) ? sudoku(grid, row, col + 1)
+						 : sudoku(grid, row + 1, 0);
+	while (++c <= '9')
 	{
 		if (is_valid(c, grid, row, col))
 		{
@@ -42,13 +38,10 @@ int	sudoku(char **grid, int row, int col)
 					return 1;
 			}
 			else
-			{
 				if (sudoku(grid, row + 1, 0))
 					return 1;
-			}
 			grid[row][col] = '.';
 		}
-		++c;
 	}
 	return 0;
 }
