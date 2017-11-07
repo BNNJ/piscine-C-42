@@ -1,8 +1,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-int		sudoku(char **grid, int row, int col);
-int		is_valid(const char c, char **grid, const int x, const int y);
+int	sudoku(char **grid, int row, int col);
+int	is_valid(const char c, char **grid, const int x, const int y);
 
 void	print_grid(char **grid)
 {
@@ -49,7 +49,7 @@ char	**set_grid(char **argv)
 }
 
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	char **grid;
 
@@ -62,6 +62,7 @@ int		main(int argc, char **argv)
 			print_grid(grid);
 		else 
 			write(1, "Error : invalid grid\n", 21);
+		free(grid);
 	}
 	return 0;
 }
