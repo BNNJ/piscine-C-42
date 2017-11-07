@@ -26,7 +26,7 @@ int	sudoku(char **grid, int row, int col)
 		return 1;
 	if (grid[row][col] != '.')
 		return (col < 8) ? sudoku(grid, row, col + 1)
-						 : sudoku(grid, row + 1, 0);
+				 : sudoku(grid, row + 1, 0);
 	while (++c <= '9')
 	{
 		if (is_valid(c, grid, row, col))
