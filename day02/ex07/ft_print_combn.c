@@ -1,25 +1,19 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-void ft_putchar(char c)
-{
-    write(1, &c, 1);
-}
-
 void ft_print_stuff(int *tab, int n)
 {
 	int i = 0;
+	char c;
 
 	while (i <= n - 1)
 	{
-		ft_putchar(tab[i] + '0');
+		c = tab[i] + '0';
+		write(1, &c, 1);
 		++i;
 	}
 	if (tab[0] != 10 - n)
-		{
-			ft_putchar(',');
-			ft_putchar(' ');
-		}
+		write(1, ", ", 2);
 }
 
 void ft_print_combn(int n)
@@ -38,12 +32,12 @@ void ft_print_combn(int n)
 			ft_print_stuff(tab, n);
 			++tab[i];
 		}
-		tab[i]--;
+		--tab[i];
 		while (tab[i] == 10 - n + i && i != 0)
 			--i;
 		++tab[i];
-		while (i <= n - 1)
-			tab[++i] = tab[i - 1] + 1;
+		while (i++ <= n - 1)
+			tab[i] = tab[i - 1] + 1;
 	}
 }
 
