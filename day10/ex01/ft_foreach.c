@@ -1,6 +1,6 @@
 #include <unistd.h>
 
-void ft_putnbr(int nb)
+void	ft_putnbr(int nb)
 {
 	unsigned int nbr = nb;
 	const char base[10] = "0123456789";
