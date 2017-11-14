@@ -22,7 +22,7 @@ int	ft_any(char **tab, int(*f)(char*))
 	return 0;
 }
 
-int main()
+int	main()
 {
 	char *tab[] = {"Helli", "Darknesssssss", "My", "Old", "Friend", 0};
 
