@@ -49,7 +49,7 @@ void	ft_sort_wordtab(char **tab)
 	}
 }
 
-int main()
+int	main()
 {
 	char *tab[] = {"Hello", "Darkness", "My", "Old", "Friend", 0};
 
