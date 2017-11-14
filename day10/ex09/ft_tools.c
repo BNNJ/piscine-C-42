@@ -1,6 +1,6 @@
 #include <unistd.h>
 
-int		ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
 	short sign;
 	unsigned long long result;
@@ -35,7 +35,7 @@ void	ft_putstr(char *str)
 		write(1, str++, 1);
 }
 
-int		ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
 	while (*s1 == *s2 && *s1 && *s2)
 	{
