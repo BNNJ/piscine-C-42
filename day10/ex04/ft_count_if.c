@@ -25,7 +25,7 @@ int	ft_count_if(char **tab, int(*f)(char*))
 	return count;
 }
 
-int main()
+int	main()
 {
 	char *tab[] = {"Hello", "Darknesssssss", "Hello", "My", "Old", "Hello", 0};
 
