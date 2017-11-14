@@ -1,8 +1,8 @@
 #ifndef _FT_DO_OP_H_
 # define _FT_DO_OP_H_
 
-int		ft_atoi(char *str);
-int		ft_strcmp(char *s1, char *s2);
+int	ft_atoi(char *str);
+int	ft_strcmp(char *s1, char *s2);
 void	ft_putstr(char *str);
 void	ft_putnbr(int nb);
 void	ft_usage();
@@ -16,6 +16,6 @@ typedef struct	s_opp
 {
 	char *opp;
 	void (*fct)(int, int);
-}				t_opp;
+}		t_opp;
 
 #endif /* _FT_DO_OP_H_ */
