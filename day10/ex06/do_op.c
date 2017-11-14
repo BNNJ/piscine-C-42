@@ -1,6 +1,6 @@
 #include "math.h"
 
-int		ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
 	short sign;
 	unsigned long long result;
