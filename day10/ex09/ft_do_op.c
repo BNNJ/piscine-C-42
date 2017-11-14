@@ -17,7 +17,7 @@ void	ft_usage(void)
 	write(1, "] are accepted.", 15);
 }
 
-int		is_opp(char *s1)
+int	is_opp(char *s1)
 {
 	int i;
 
@@ -31,17 +31,12 @@ int		is_opp(char *s1)
 	return 5;
 }
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-//	void	(*op)(int, int);
-
 	if (argc != 4)
 		return 0;
 	else if (is_opp(argv[2]) >= 0)
-	{
-//		op = gl_opptab[is_opp(argv[2])].fct;
 		gl_opptab[is_opp(argv[2])].fct(ft_atoi(argv[1]), ft_atoi(argv[3]));
-	}
 	else
 		write(1, "0", 1);
 	return 0;
