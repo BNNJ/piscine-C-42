@@ -7,7 +7,7 @@ BIN = do_op
 EXT = .exe
 
 $(BIN): $(OBJS)
-	$(CC) -o $(BIN) $(OBJS) $(CFLAGS)
+	$(CC) -o $@ $(OBJS) $(CFLAGS)
 
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
