@@ -1,9 +1,22 @@
-CC=gcc
-CFLAGS=-I.
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+SRCS = ft_do_op.c ft_math.c ft_tools.c
+OBJS = $(SRCS:.c=.o)
 DEPS = ft_do_op.h ft_opp.h
+BIN = do_op
+EXT = .exe
+
+$(BIN): $(OBJS)
+	$(CC) -o $(BIN) $(OBJS) $(CFLAGS)
 
 %.o: %.c $(DEPS)
-	$(CC) -Wall -Wextra -Werror -c -o $@ $< $(CFLAGS)
+	$(CC) -c -o $@ $< $(CFLAGS)
 
-do_op: ft_do_op.o ft_math.o ft_tools.o
-	gcc -Wall -Werror -Wextra -o do_op ft_do_op.o ft_math.o ft_tools.o -I.
+.PHONY : clean fclean re
+clean :
+	del $(OBJS)
+
+fclean : clean
+	del $(BIN)$(EXT)
+
+re : fclean $(BIN)
