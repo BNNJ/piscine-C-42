@@ -1,9 +1,3 @@
-ifeq ($(OS), Windows_NT)
-	D_OS = Win
-else
-	D_OS = Other
-endif
-
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -iquote includes
 SDIR = srcs/
@@ -14,7 +8,7 @@ SRCS = ft_do_op.c \
 OBJS = $(SRCS:.c=.o)
 INCL = includes/ft_do_op.h includes/ft_opp.h
 
-ifeq ($(D_OS), Win)
+ifeq ($(OS), Windows_NT)
 	NAME = advanced_op-op.exe
 	RM = del
 else
