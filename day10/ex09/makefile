@@ -14,7 +14,7 @@ SRCS = ft_do_op.c \
 OBJS = $(SRCS:.c=.o)
 INCL = includes/ft_do_op.h includes/ft_opp.h
 
-ifeq ($(D_OS),Win)
+ifeq ($(D_OS), Win)
 	NAME = advanced_op-op.exe
 	RM = del
 else
