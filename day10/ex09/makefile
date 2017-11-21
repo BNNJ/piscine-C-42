@@ -1,3 +1,9 @@
+ifeq ($(OS), Windows_NT)
+	D_OS = Win
+else
+	D_OS = Other
+endif
+
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -iquote includes
 SDIR = srcs/
@@ -10,6 +16,14 @@ INCL = includes/ft_do_op.h includes/ft_opp.h
 
 NAME = ft_advanced_do-op.exe
 RM = del
+
+ifeq ($(D_OS),Win)
+	NAME = advanced_op-op.exe
+	RM = del
+else
+	NAME = advanced_op-op.out
+	RM = rm -f
+endif
 
 .PHONY :	all clean fclean re mclean
 
