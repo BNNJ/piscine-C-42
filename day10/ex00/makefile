@@ -1,13 +1,14 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -iquote includes
 SDIR = srcs/
-SRCS = ft_do_op.c \
-		ft_math.c \
-		ft_tools.c \
-
+SRCS = ft_putchar.c	\
+		ft_putstr.c	\
+		ft_strlen.c	\
+		ft_strcmp.c	\
+		ft_swap.c
 OBJS = $(SRCS:.c=.o)
 
-NAME = ft_advanced_do-op.exe
+NAME = libft.a
 RM = del
 
 .PHONY :	all clean fclean re mclean
@@ -15,7 +16,8 @@ RM = del
 all : 		$(NAME)
 
 $(NAME):	$(OBJS)
-	$(CC) -o $@ $? $(CFLAGS)
+	ar rc $@ $?
+	ranlib $@
 
 %.o :		$(SDIR)%.c
 	$(CC) -o $@ -c $< $(CFLAGS)
