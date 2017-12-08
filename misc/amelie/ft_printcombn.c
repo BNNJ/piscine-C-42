@@ -10,22 +10,20 @@ void ft_putchar (char c)
 int puissance1(int n)
 {
 	int puissance = 1, i = n;
-	while (i > 0)
-	{
+
+	while (--i > 0)
 		puissance *= 10;
-		i--;
-	}
-	puissance /= 10;
 	return puissance;
 }
 
 int test_nombre(int i, int puissance)
 {
-	int r = i;
+	int r = i, k, j;
+
 	if (puissance >= 10)
 	{
-		int k = i / puissance;
-		int j = (i % puissance) / (puissance / 10);
+		k = i / puissance;
+		j = (i % puissance) / (puissance / 10);
 		if (k >= j)
 			return 0;
 		else 
@@ -40,10 +38,7 @@ int test_nombre(int i, int puissance)
 
 void ft_print_combn(int n)
 {
-	int i, j;
-	int puissance = puissance1(n); 
-	int k;
-	int decompte; 
+	int i, j, k, decompte, puissance = puissance1(n);
 
 	for(j = 1; j < puissance * 10; j++)
 	{
