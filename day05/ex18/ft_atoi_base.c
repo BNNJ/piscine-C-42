@@ -7,7 +7,7 @@ int	ft_search_base(char c, char *base)
 	i = 0;
 	while (base[i])
 	{
-		if (c == base[i])
+		if (c == base[i] || c == '-' || c == '+')
 			return i;
 		++i;
 	}
