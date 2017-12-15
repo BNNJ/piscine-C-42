@@ -51,7 +51,7 @@ int	ft_compute(char *str, char *base)
 	sign = (*str == '-') ? -1 : 1;
 	if (*str == '-' || *str == '+')
 		++str;
-	while (*str)
+	while (*str && *str != '-' && *str != '+' )
 	{
 		result = result * base_len + (ft_search_base(*str, base));
 		++str;
