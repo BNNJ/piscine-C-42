@@ -33,13 +33,11 @@ void	print_spaces(int size, int line, int floor, int spaces, int k)
 	else if (line < nb_lines(size) && line == nb_lines(floor) && floor % 2 == 1)
 		print_spaces(size, line + 1, floor + 1, spaces + k, k);
 	else
-	{
 		while (i <= spaces)
 		{
 			write(1, " ", 1);
 			i++;
 		}
-	}
 }
 
 void	print_line(int line, int size, int size_door)
@@ -62,9 +60,7 @@ void	print_line(int line, int size, int size_door)
 				write(1, "|",1);
 		}
 		else
-		{
 			write(1, "*", 1);
-		}
 		++i;
 	}
 	write(1, "\\", 1);
