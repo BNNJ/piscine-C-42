@@ -1,4 +1,4 @@
-#include "ft_stock_tab.h"
+#include "ft_stock_par.h"
 
 void ft_putnbr(int nb)
 {
@@ -36,7 +36,7 @@ void	ft_show_tab(t_stock_par *par)
 {
 	while (par->str)
 	{
-		ft_putstr(par->str);
+		ft_putstr(par->copy);
 		write(1, "\n", 1);
 		ft_putnbr(par->size_param);
 		write(1, "\n", 1);

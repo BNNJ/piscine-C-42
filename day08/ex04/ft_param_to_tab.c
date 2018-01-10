@@ -1,4 +1,4 @@
-#include "ft_stock_tab.h"
+#include "ft_stock_par.h"
 char	**ft_split_whitespaces(char *str);
 void	ft_show_tab(t_stock_par *par);
 
