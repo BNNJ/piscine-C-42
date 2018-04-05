@@ -1,26 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned int dest_len;
-	unsigned int src_len;
+	size_t	dst_len;
+	size_t	src_len;
+	size_t	i;
 
-	dest_len = 0;
-	src_len = 0;
-	while (*dest++ && size--)
-		++dest_len;
-	while (*src)
+	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
+	if (dst_len + 1 < size)
 	{
-		if (--size)
-			*dest = *src;
-		++src_len;
-		++dest;
-		++src;
+		i = 0;
+		while (i < size - 1 - dst_len && src[i])
+		{
+			dst[dst_len + i] = src[i];
+			++i;
+		}
+		dst[dst_len + i] = '\0';
 	}
-	if (!size && !*src)
-		*dest = '\0';
-	return dest_len + src_len;
+	return (dst_len > size ? src_len + size : src_len + dst_len);
 }
 
 int		main(int argc, char **argv)
