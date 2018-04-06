@@ -2,8 +2,8 @@
 
 void ft_putnbr(int nb)
 {
-	unsigned int nbr = nb;
-	const char base[10] = "0123456789";
+	long		nbr = nb;
+	const char	base[10] = "0123456789";
 	
 	if (nb < 0)
 	{
