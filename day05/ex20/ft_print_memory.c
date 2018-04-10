@@ -7,9 +7,8 @@ void	ft_print_address(const  unsigned long long int n, int i)
 	base = "0123456789abcdef";
 	if (n / 16 > 0)
 		ft_print_address(n / 16, i + 1);
-	else if (i < 8)
-		while (++i <= 8)
-			write(1, "0", 1);
+	else if (i < 10)
+		write(1, "000000000000", 10 - i);
 	write(1, base + n % 16, 1);
 }
 
@@ -28,11 +27,9 @@ void	ft_print_hex(const unsigned char c, const int j, const int size)
 		write(1, " ", 1);
 }
 
-void	ft_print_char(const char c, const int j, const int size)
+void	ft_print_char(const char c)
 {
-	if (j > size)
-		write(1, " ", 1);
-	else if (c >= 32 && c <= 126) 
+	if (c >= 32 && c <= 126) 
 		write(1, &c, 1);
 	else 
 		write(1, ".", 1);
@@ -53,21 +50,19 @@ void	*ft_print_memory(void *addr, unsigned int size)
 			ft_print_hex(*(unsigned char*)(addr + j - 1), j, size);
 		write(1, " ", 1);
 		j = i;
-		while (++j <= 16 + i)
-			ft_print_char(*(unsigned char*)(addr + j - 1), j, size);
+		while (++j <= 16 + i && j < size)
+			ft_print_char(*(unsigned char*)(addr + j - 1));
 		write(1, "\n", 1);
 		i += 16;
 	}
 	return addr;
 }
 
-int		main()
+int	main(void)
 {
-	unsigned int size = 64;
-	char bla[] = "Holy shit i have no idea what i'm doing and what is this ?";
-	void *ptr;
+	int	tab[10] = {0, 23, 150, 255,
+	              12, 16,  42, 103};
 
-	ptr = bla;
-	ft_print_memory(ptr, size);
-	return 0;
+	ft_print_memory(tab, sizeof(tab));
+	return (0);
 }
