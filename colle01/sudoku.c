@@ -9,12 +9,10 @@ int	is_valid(const char c, char **grid, const int y, const int x)
 			return 0;
 		++i;
 	}
-	if ((c == grid[(y / 3) * 3 + (y + 1) % 3][(x / 3) * 3 + (x + 1) % 3])
+	return ((c == grid[(y / 3) * 3 + (y + 1) % 3][(x / 3) * 3 + (x + 1) % 3])
 		|| (c == grid[(y / 3) * 3 + (y + 2) % 3][(x / 3) * 3 + (x + 1) % 3])
 		|| (c == grid[(y / 3) * 3 + (y + 1) % 3][(x / 3) * 3 + (x + 2) % 3])
-		|| (c == grid[(y / 3) * 3 + (y + 2) % 3][(x / 3) * 3 + (x + 2) % 3]))
-		return 0;
-	return 1;
+		|| (c == grid[(y / 3) * 3 + (y + 2) % 3][(x / 3) * 3 + (x + 2) % 3]));
 }
 
 int	sudoku(char **grid, int row, int col) 
