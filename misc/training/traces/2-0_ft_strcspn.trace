@@ -1,0 +1,92 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e2r7p19.42.fr
+Darwin 16.7.0 x86_64
+$> date
+Thu Apr 12 13:12:16 CEST 2018
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin16.7.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2018/c-exam-alone-in-the-dark-beginner/practice-exam_20180412/pfragnou
+
+= Git history ==================================================================
+$> git -C /var/folders/9r/lfmn92_15911xbc9m93p07l40000gq/T/tmpSiKzNm/user log --pretty='%H - %an, %ad : %s'
+8f1a76e899923dfd33945272dd2c20ab9c1129c3 - Pascal FRAGNOUD, Thu Apr 12 13:12:00 2018 +0200 : practice level 02
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/9r/lfmn92_15911xbc9m93p07l40000gq/T/tmpSiKzNm/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  264 Apr 12 13:12 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Apr 12 13:12 ft_strcspn
+
+/var/folders/9r/lfmn92_15911xbc9m93p07l40000gq/T/tmpSiKzNm/user/ft_strcspn:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1184 Apr 12 13:12 ft_strcspn.c
+ 
+= ft_strcspn ===================================================================
+$> clang -Wextra -Wall -Werror main.c ft_strcspn.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./fo7mnmbgugfqbq2mki9y6swq 'chat' 'chien'
+$> diff -U 3 user_output_test1 test1.output | cat -e
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./22b5po8u3e5vgme9uvcd7gv2 'ABCDEFG019874' 'ABCD'
+$> diff -U 3 user_output_test2 test2.output | cat -e
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./klmackgpzzcgg0qixtg1fovc ' ' '1234567890'
+$> diff -U 3 user_output_test3 test3.output | cat -e
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./7ddfq61kqfei0483aww503sj '1234567890' ' '
+$> diff -U 3 user_output_test4 test4.output | cat -e
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./0mxah61an10xh20y2n9ex5o2 ';fjhbsdnc xwpusgrhbs' 'opsiyhgvdzbnciox'
+$> diff -U 3 user_output_test5 test5.output | cat -e
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./279jrj8rt8jnmndesliqcfog '0987654321' '1234567890'
+$> diff -U 3 user_output_test6 test6.output | cat -e
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./4k22xpljixdeqh2xh9jjw3jd '/bin/ls/' '/bien/ls/~'
+$> diff -U 3 user_output_test7 test7.output | cat -e
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./0wkj5whxw7nvd9rck2m2uof1 '~`,./<>?!@#$%^&*()-+_{}[]|\' 'abcdefghijklmnopqrstuvzxyz'
+$> diff -U 3 user_output_test8 test8.output | cat -e
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./up6wjg6cl1hpb8a3mi7w6v5n 'Farenheit' 'Degree'
+$> diff -U 3 user_output_test9 test9.output | cat -e
+
+Diff OK :D
+= Test 10 ==================================================
+$> ./32f8vb5c4ewzse5o5686ihbx 'Et quoniam inedia gravi adflictabantur, locum petivere Paleas nomine, vergentem in mare, valido muro firmatum, ubi conduntur nunc usque commeatus distribui militibus omne latus Isauriae defendentibus adsueti. circumstetere igitur hoc munimentum per triduum et trinoctium et cum neque adclivitas ipsa sine discrimine adiri letali, nec cuniculis quicquam geri posset, nec procederet ullum obsidionale commentum, maesti excedunt postrema vi subigente maiora viribus adgressuri.' 'Et quoniam inedia gravi adflictabantur, locum petivere Paleas nomine, vergentem in mare, valido muro firmatum, ubi conduntur nunc usque commeatus distribui militibus omne latus Isauriae defendentibus adsueti. circumstetere igitur hoc munimentum per triduum et trinoctium et cum neque adclivitas ipsa sine discrimine adiri letali, nec cuniculis quicquam geri posset, nec procederet ullum obsidionale commentum, maesti excedunt postrema vi subigente maiora viribus adgressuri.'
+$> diff -U 3 user_output_test10 test10.output | cat -e
+
+Diff OK :D
+Grade: 1
+
+= Final grade: 1 ===============================================================
