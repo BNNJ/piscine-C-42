@@ -3,20 +3,13 @@
 
 int	ft_ultimate_range(int **range, int min, int max)
 {
-	int len;
-	int *tab;
-	int i = 0;
+	int i = -1;
 
-	len = max - min;
-	if (len <= 0 || !(tab = malloc(sizeof(int) * len)))
-	{
-		range = 0;
+	if (!(*range = malloc(sizeof(int) * (max - min))))
 		return 0;
-	}
-	while (min < max)
-		tab[i++] = min++;
-	*range = tab;
-	return len;
+	while (++i < max - min)
+		(*range)[i] = min + i;
+	return (max - min);
 }
 
 int	main(int argc, char **argv)
